@@ -20,8 +20,38 @@ mongoose
     return Recipe.deleteMany()
   })
   .then(() => {
-    // Run your code here, after you have insured that the connection was made
+    //Iteration 2
+    //const recipe1 = { title: 'Enchiladas', cuisine: 'Mexican', creator: 'Brian'};
+    //Recipe.create(recipe1)
+    //  .then(recipe => console.log(`The recipe is saved and its value is: ${recipe1.title}`))
+    
+    //Iteration 3
+    //Recipe.insertMany(data)
+    //  .then(data => {
+    //      for (let i = 0; i < data.length; i++) {
+    //        console.log(`${data.title}`)
+    //      }
+    //  })
+
+    //Iteration 4
+    //Recipe.findOneAndUpdate({ title: 'Rigatoni alla Genovese' }, { duration: 100 })
+    //.then(console.log('success!'))
+    //.catch(console.log('error!')) //do I need this if catch included below?
+
+    //Iteration 5
+    //Recipe.deleteOne({ title: 'Carrot Cake' })
+    //.then(console.log('success!'))
+
+    //Iteration 6
+    mongoose.connection
+    .close()
+    .then(() => {
+    console.log("Connection with Mongo closed!");
+    })
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
   });
+
+
+  
